@@ -24,10 +24,9 @@ def delete(alst):
     print(alst)
 
 def display(blst):
-    print(blst)
     for i in range (len(blst)):
         for j in range(len(blst)):
-            if blst[i][1]>blst[j][1]:
+            if int(blst[j][1])>int(blst[i][1]) and int(blst[i][1])!=int(blst[j][1]):
                 temp=blst[i]
                 blst[i]=blst[j]
                 blst[j]=temp
