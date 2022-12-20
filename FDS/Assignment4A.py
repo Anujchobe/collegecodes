@@ -24,9 +24,10 @@ def senti(lst):
     while lst[i]!=r:
             i+=1
     lst[-1]=last
-    if (i<=len(lst)-1 or lst[i]):
+    if (i<len(lst)-1 or lst[-1]==r):
         print("Roll number found at position: ",i+1)
-    
+    else:    
+        print("Roll number not found! ")
 
 def main():
     lst=[]
