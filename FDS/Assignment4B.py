@@ -21,8 +21,43 @@ def binary(lst):
         print("Roll number found at position: ",m+1)
     else:
         print("Roll number not found")
+
+
 def fibb(lst):
-    pass
+    print(lst)
+    x=int(input("Enter roll number to search: "))
+    fib2=0
+    fib1=1
+    fib=fib1+fib1
+    n=len(lst)
+    offset=-1
+
+    while (fib<n):
+        fib2=fib1 
+        fib1=fib
+        fib=fib1+fib2   
+    
+    while(fib>1):
+        i=min(offset+fib2,n-1)
+    
+        if int(lst[i])<x:
+            fib=fib1
+            fib1=fib2
+            fib2=fib-fib1
+            offset=i
+    
+        elif int(lst[i])>x:
+            fib=fib2
+            fib1=fib1-fib2
+            fib2=fib-fib1
+    
+        elif int(lst[i])==x:
+            print("Roll number found at position: ",i+1)
+            break
+    else:
+        print("Roll number not found! ")
+
+
 
 def main():
     lst=[]
